@@ -57,11 +57,12 @@ def render_token_docs_page(settings: TokenDocsSettings) -> str:
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f1f4e8">
-  <meta name="description" content="Official contract-address documentation and safety guidance for {token_name}.">
+  <link rel="icon" href="/assets/token-docs/favicon.svg" type="image/svg+xml">
+  <meta name="description" content="Token documentation for {token_name}.">
   <title>{token_name} Documentation — Agenvora</title>
-  <link rel="stylesheet" href="/assets/token-docs/token-docs.css">
+  <link rel="stylesheet" href="/assets/token-docs/token-docs.css?v=3">
   <script id="tokenDocsConfig" type="application/json">{config}</script>
-  <script type="module" src="/assets/token-docs/token-docs-page.mjs"></script>
+  <script type="module" src="/assets/token-docs/token-docs-page.mjs?v=3"></script>
 </head>
 <body>
   <svg class="icon-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
@@ -75,18 +76,17 @@ def render_token_docs_page(settings: TokenDocsSettings) -> str:
     <symbol id="docs-icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
   </defs></svg>
 
-  <a class="skip-link" href="#docsContent">Skip to documentation</a>
-  <noscript><div class="noscript-note">Contract data requires JavaScript. The safety and usage guidance below remains available.</div></noscript>
+  <a class="skip-link" href="/docs/token?section=docsContent">Skip to documentation</a>
+  <noscript><div class="noscript-note">Contract data requires JavaScript.</div></noscript>
 
-  <div class="protocol-bar"><div class="site-wrap protocol-inner"><span>Official {token_symbol} contract details and verification guidance</span></div></div>
   <header class="site-header">
     <nav class="site-wrap site-nav" aria-label="Primary navigation">
       <a class="brand" href="/" aria-label="Agenvora home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>AGENVORA</a>
       <button class="site-menu" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="siteNavLinks"><svg class="icon" aria-hidden="true"><use href="#docs-icon-menu"></use></svg></button>
       <div class="site-nav-links" id="siteNavLinks">
-        <a href="/#orchestration">Orchestration</a>
-        <a href="/#budget">Budget</a>
-        <a href="/#economy">Token model</a>
+        <a href="/?section=orchestration">Orchestration</a>
+        <a href="/?section=budget">Budget</a>
+        <a href="/?section=economy">Token model</a>
         <a href="/docs/token" aria-current="page">Token docs</a>
         <a class="button button-secondary" href="mailto:builders@agenvora.ai">Builder contact <svg class="icon" aria-hidden="true"><use href="#docs-icon-external"></use></svg></a>
       </div>
@@ -97,14 +97,14 @@ def render_token_docs_page(settings: TokenDocsSettings) -> str:
     <div class="docs-layout site-wrap">
       <nav class="docs-rail docs-rail-left" aria-label="Documentation sections">
         <p class="rail-title">Token documentation</p>
-        <a href="#official-contract" aria-current="location">Contract address</a>
-        <a href="#token-overview">Token details</a>
-        <a href="#add-token">Add the token</a>
-        <a href="#integration">Integration</a>
-        <a href="#validation">Validation rules</a>
+        <a href="/docs/token?section=official-contract" aria-current="location">Contract address</a>
+        <a href="/docs/token?section=token-overview">Token details</a>
+        <a href="/docs/token?section=add-token">Add the token</a>
+        <a href="/docs/token?section=integration">Integration</a>
+        <a href="/docs/token?section=validation">Validation rules</a>
         <span class="rail-divider"></span>
-        <a href="/#protocol">Product overview</a>
-        <a href="/#economy">Token model</a>
+        <a href="/?section=protocol">Product overview</a>
+        <a href="/?section=economy">Token model</a>
       </nav>
 
       <article class="docs-article">
@@ -175,12 +175,12 @@ def render_token_docs_page(settings: TokenDocsSettings) -> str:
         <details class="mobile-docs-nav">
           <summary>On this page</summary>
           <nav aria-label="Mobile documentation navigation">
-            <a href="#official-contract">Official Contract Address</a>
-            <a href="#verify-before-use">Verify before use</a>
-            <a href="#token-overview">Token details</a>
-            <a href="#add-token">How to add the token</a>
-            <a href="#integration">Integration</a>
-            <a href="#validation">Validation rules</a>
+            <a href="/docs/token?section=official-contract">Official Contract Address</a>
+            <a href="/docs/token?section=verify-before-use">Verify before use</a>
+            <a href="/docs/token?section=token-overview">Token details</a>
+            <a href="/docs/token?section=add-token">How to add the token</a>
+            <a href="/docs/token?section=integration">Integration</a>
+            <a href="/docs/token?section=validation">Validation rules</a>
           </nav>
         </details>
 
@@ -240,20 +240,20 @@ const tokenContract = await response.json();
 
       <nav class="docs-rail docs-rail-right" aria-label="On this page">
         <p class="rail-title">On this page</p>
-        <a href="#official-contract">Official Contract Address</a>
-        <a href="#verify-before-use">Verify before use</a>
-        <a href="#token-overview">Token details</a>
-        <a href="#add-token">How to add the token</a>
-        <a href="#integration">Integration</a>
-        <a href="#validation">Validation rules</a>
+        <a href="/docs/token?section=official-contract">Official Contract Address</a>
+        <a href="/docs/token?section=verify-before-use">Verify before use</a>
+        <a href="/docs/token?section=token-overview">Token details</a>
+        <a href="/docs/token?section=add-token">How to add the token</a>
+        <a href="/docs/token?section=integration">Integration</a>
+        <a href="/docs/token?section=validation">Validation rules</a>
       </nav>
     </div>
   </main>
 
   <footer class="site-footer">
     <div class="site-wrap footer-main"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>AGENVORA</a>
-      <div class="footer-links"><div><strong>Product</strong><a href="/#orchestration">Orchestration</a><a href="/#budget">Budget</a><a href="/#economy">Token model</a><a href="/#protocol">Repository</a></div><div><strong>Documentation</strong><a href="/docs/token" aria-current="page">Token documentation</a><a href="mailto:builders@agenvora.ai">Builders</a><a href="mailto:hello@agenvora.ai">Email</a><a href="{twitter_url}" target="_blank" rel="noopener noreferrer">X / Twitter <svg class="icon" aria-hidden="true"><use href="#docs-icon-external"></use></svg></a></div></div>
-    </div><div class="site-wrap footer-bottom"><span>© 2026 Agenvora Foundation</span><span>Published contract details / verify independently</span></div>
+      <div class="footer-links"><div><strong>Product</strong><a href="/?section=orchestration">Orchestration</a><a href="/?section=budget">Budget</a><a href="/?section=economy">Token model</a><a href="/?section=protocol">Repository</a></div><div><strong>Documentation</strong><a href="/docs/token" aria-current="page">Token documentation</a><a href="mailto:builders@agenvora.ai">Builders</a><a href="mailto:hello@agenvora.ai">Email</a><a href="{twitter_url}" target="_blank" rel="noopener noreferrer">X / Twitter <svg class="icon" aria-hidden="true"><use href="#docs-icon-external"></use></svg></a></div></div>
+    </div><div class="site-wrap footer-bottom"><span>© 2026 Agenvora Foundation</span><span>Token documentation</span></div>
   </footer>
 </body>
 </html>'''

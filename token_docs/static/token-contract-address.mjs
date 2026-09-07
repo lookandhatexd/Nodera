@@ -1,6 +1,6 @@
-import { fetchTokenContract } from "./token-contract.service.mjs";
-import { copyText, LiveTokenContractController } from "./live-token-contract.mjs";
-import { TokenContractErrorCode } from "./token-contract.types.mjs";
+import { fetchTokenContract } from "./token-contract.service.mjs?v=3";
+import { copyText, LiveTokenContractController } from "./live-token-contract.mjs?v=3";
+import { TokenContractErrorCode } from "./token-contract.types.mjs?v=3";
 
 const absoluteTime = new Intl.DateTimeFormat(globalThis.document?.documentElement?.lang || "en-US", {
   year: "numeric",

@@ -1,5 +1,5 @@
-import { copyText } from "./live-token-contract.mjs";
-import { LiveTokenContractAddress } from "./token-contract-address.mjs";
+import { copyText } from "./live-token-contract.mjs?v=3";
+import { LiveTokenContractAddress } from "./token-contract-address.mjs?v=3";
 
 function readConfig(documentRef) {
   const element = documentRef.querySelector("#tokenDocsConfig");
@@ -31,12 +31,34 @@ function setupSiteNavigation(documentRef) {
   });
 }
 
+function setupSectionNavigation(documentRef) {
+  const links = [...documentRef.querySelectorAll('a[href*="?section="]')];
+  for (const link of links) {
+    link.addEventListener("click", (event) => {
+      const url = new URL(link.href, globalThis.location.href);
+      const section = url.searchParams.get("section");
+      if (url.pathname !== globalThis.location.pathname || !section) return;
+      const target = documentRef.getElementById(section);
+      if (!target) return;
+      event.preventDefault();
+      target.scrollIntoView({ behavior: globalThis.matchMedia?.("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+      history.replaceState(null, "", globalThis.location.pathname);
+    });
+  }
+  const section = new URLSearchParams(globalThis.location.search).get("section");
+  if (section) requestAnimationFrame(() => {
+    documentRef.getElementById(section)?.scrollIntoView({ behavior: "auto" });
+    history.replaceState(null, "", globalThis.location.pathname);
+  });
+}
+
 function setupDocumentationNavigation(documentRef) {
   const details = documentRef.querySelector(".mobile-docs-nav");
-  const links = [...documentRef.querySelectorAll('.docs-rail a[href^="#"], .mobile-docs-nav a[href^="#"]')];
+  const links = [...documentRef.querySelectorAll('.docs-rail a[href*="?section="], .mobile-docs-nav a[href*="?section="]')];
   for (const link of links) {
     link.addEventListener("click", () => {
-      const target = documentRef.querySelector(link.getAttribute("href"));
+      const targetId = new URL(link.href, globalThis.location.href).searchParams.get("section");
+      const target = targetId ? documentRef.getElementById(targetId) : null;
       if (details?.open) details.open = false;
       if (target) {
         target.setAttribute("tabindex", "-1");
@@ -50,7 +72,7 @@ function setupDocumentationNavigation(documentRef) {
     const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
     if (!visible) return;
     for (const link of links) {
-      if (link.getAttribute("href") === `#${visible.target.id}`) link.setAttribute("aria-current", "location");
+      if (new URL(link.href, globalThis.location.href).searchParams.get("section") === visible.target.id) link.setAttribute("aria-current", "location");
       else link.removeAttribute("aria-current");
     }
   }, { rootMargin: "-20% 0px -70% 0px", threshold: 0 });
@@ -80,6 +102,7 @@ function setupExampleCopy(documentRef) {
 
 const config = readConfig(document);
 setupSiteNavigation(document);
+setupSectionNavigation(document);
 setupDocumentationNavigation(document);
 setupExampleCopy(document);
 const component = new LiveTokenContractAddress(document.querySelector("#liveTokenContract"), config, document);

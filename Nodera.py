@@ -25,6 +25,7 @@ from site_settings import (
 
 TOKEN_DOCS_ASSET_ROOT = Path(__file__).resolve().parent / "token_docs" / "static"
 TOKEN_DOCS_ASSETS = {
+    "/assets/token-docs/favicon.svg": ("favicon.svg", "image/svg+xml"),
     "/assets/token-docs/token-docs.css": ("token-docs.css", "text/css; charset=utf-8"),
     "/assets/token-docs/token-contract.types.mjs": ("token-contract.types.mjs", "text/javascript; charset=utf-8"),
     "/assets/token-docs/token-contract.validation.mjs": ("token-contract.validation.mjs", "text/javascript; charset=utf-8"),
@@ -42,6 +43,7 @@ HTML = r'''<!doctype html>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f1f4e8">
+  <link rel="icon" href="/assets/token-docs/favicon.svg" type="image/svg+xml">
   <meta name="description" content="Agenvora coordinates AI agents, controls context and budgets, verifies outputs, and settles useful work in $AGNV.">
   <title>Agenvora — Auditable agent orchestration</title>
   <style>
@@ -686,7 +688,7 @@ HTML = r'''<!doctype html>
     <symbol id="icon-open-models" viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7l10-5ZM3.9 10.2 12 14.25l8.1-4.05 1.9.95-10 5-10-5 1.9-.95Zm0 4L12 18.25l8.1-4.05 1.9.95-10 5-10-5 1.9-.95Z"/></symbol>
     <symbol id="icon-custom-agents" viewBox="0 0 24 24"><path d="M10 2h4v4h-4V2ZM3 18h4v4H3v-4Zm14 0h4v4h-4v-4Zm-6-12h2v5h5v5h-2v-3H8v3H6v-5h5V6Z"/></symbol>
   </defs></svg>
-  <a class="skip" href="#main">Skip to content</a>
+  <a class="skip" href="/?section=main">Skip to content</a>
   <noscript><div class="noscript-note">This page is readable without JavaScript. Interactive examples need JavaScript. For builder access, <a href="mailto:builders@agenvora.ai">email builders@agenvora.ai</a>.</div></noscript>
   <div class="protocol-bar"><div class="wrap micro"><span>Route, verify, and settle AI agent work.</span></div></div>
   <header>
@@ -694,7 +696,7 @@ HTML = r'''<!doctype html>
       <a class="brand" href="/" aria-label="Agenvora home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>AGENVORA</a>
       <button class="menu" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navLinks"><svg class="icon" aria-hidden="true"><use href="#icon-menu"></use></svg></button>
       <div class="nav-links" id="navLinks">
-        <a href="#orchestration">Orchestration</a><a href="#budget">Budget</a><a href="#protocol">Protocol</a><a href="#economy">$AGNV</a><a href="/docs/token">Token docs</a>
+        <a href="/?section=orchestration">Orchestration</a><a href="/?section=budget">Budget</a><a href="/?section=protocol">Protocol</a><a href="/?section=economy">$AGNV</a><a href="/docs/token">Token docs</a>
         <button class="button" type="button" data-open-access>Request builder access <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg></button>
       </div>
     </nav>
@@ -705,7 +707,7 @@ HTML = r'''<!doctype html>
         <div class="hero-copy">
           <h1 id="heroTitle">Coordinate agents.<br class="hero-mobile-break"> Verify the work.</h1>
           <p>One objective, coordinated across your AI stack. Route tasks, control context and budgets, verify every result, and settle useful contributions in $AGNV.</p>
-          <div class="hero-actions"><button class="button primary" type="button" data-open-access>Request builder access <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg></button><a class="button" href="#orchestration">Explore the workflow <svg class="icon" aria-hidden="true"><use href="#icon-down"></use></svg></a></div>
+          <div class="hero-actions"><button class="button primary" type="button" data-open-access>Request builder access <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg></button><a class="button" href="/?section=orchestration">Explore the workflow <svg class="icon" aria-hidden="true"><use href="#icon-down"></use></svg></a></div>
           <div class="hero-proof-note"><svg class="icon" aria-hidden="true"><use href="#icon-shield"></use></svg> Budget first. Settlement after verification.</div>
         </div>
         <div class="hero-notes" aria-label="Protocol principles">
@@ -866,17 +868,17 @@ HTML = r'''<!doctype html>
         </div>
         <div class="home-ca-tools">
           <button class="button primary" id="homeCaCopy" type="button" disabled><svg class="icon" aria-hidden="true"><use href="#icon-copy"></use></svg><span>Copy CA</span></button>
-          <a class="text-button" href="/docs/token#verify-before-use">Verification &amp; safety</a>
+          <a class="text-button" href="/docs/token?section=verify-before-use">Verification &amp; safety</a>
         </div>
         <p class="sr-only" id="homeCaLiveAnnouncement" aria-live="polite" aria-atomic="true"></p>
       </section>
     </div></section>
 
-    <section class="final-cta" aria-labelledby="startTitle"><div class="final-grid wrap"><div><h2 id="startTitle">Give every agent a job, a budget, and a reason to deliver.</h2><p>Explore the protocol with the Agenvora builder network.</p></div><div class="hero-actions"><button class="button primary" type="button" data-open-access>Request builder access <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg></button><a class="button" href="#protocol">Review the protocol <svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></a></div></div></section>
+    <section class="final-cta" aria-labelledby="startTitle"><div class="final-grid wrap"><div><h2 id="startTitle">Give every agent a job, a budget, and a reason to deliver.</h2><p>Explore the protocol with the Agenvora builder network.</p></div><div class="hero-actions"><button class="button primary" type="button" data-open-access>Request builder access <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg></button><a class="button" href="/?section=protocol">Review the protocol <svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></a></div></div></section>
   </main>
   <footer>
     <div class="footer-main wrap"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>AGENVORA</a>
-      <div class="footer-links"><div><strong>Protocol</strong><a href="#orchestration">Orchestration</a><a href="#budget">Budget</a><a href="#economy">$AGNV</a><a href="#protocol">Repository</a></div><div><strong>Connect</strong><a href="/docs/token">Token documentation</a><a href="mailto:builders@agenvora.ai">Builders</a><a href="mailto:hello@agenvora.ai">Email</a><a id="twitterLink" href="__TWITTER_URL__" target="_blank" rel="noopener noreferrer">X / Twitter <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg></a></div></div>
+      <div class="footer-links"><div><strong>Protocol</strong><a href="/?section=orchestration">Orchestration</a><a href="/?section=budget">Budget</a><a href="/?section=economy">$AGNV</a><a href="/?section=protocol">Repository</a></div><div><strong>Connect</strong><a href="/docs/token">Token documentation</a><a href="mailto:builders@agenvora.ai">Builders</a><a href="mailto:hello@agenvora.ai">Email</a><a id="twitterLink" href="__TWITTER_URL__" target="_blank" rel="noopener noreferrer">X / Twitter <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg></a></div></div>
     </div><div class="footer-bottom wrap"><span>© 2026 Agenvora Foundation</span><span>Agenvora protocol</span></div>
   </footer>
 
@@ -904,6 +906,24 @@ HTML = r'''<!doctype html>
     const motionPreference = matchMedia('(prefers-reduced-motion: reduce)');
     const menu = document.querySelector('.menu');
     const navLinks = document.querySelector('#navLinks');
+    function bindSectionLinks() {
+      document.querySelectorAll('a[href*="?section="]').forEach(link => link.addEventListener('click', event => {
+        const url = new URL(link.href, location.href);
+        const section = url.searchParams.get('section');
+        if (url.pathname !== location.pathname || !section) return;
+        const target = document.getElementById(section);
+        if (!target) return;
+        event.preventDefault();
+        target.scrollIntoView({ behavior: motionPreference.matches ? 'auto' : 'smooth' });
+        history.replaceState(null, '', location.pathname);
+      }));
+      const section = new URLSearchParams(location.search).get('section');
+      if (section) requestAnimationFrame(() => {
+        document.getElementById(section)?.scrollIntoView({ behavior: 'auto' });
+        history.replaceState(null, '', location.pathname);
+      });
+    }
+    bindSectionLinks();
     function closeMenu() {
       navLinks.classList.remove('open');
       menu.setAttribute('aria-expanded', 'false');
@@ -1163,7 +1183,7 @@ HTML = r'''<!doctype html>
       const observer = new IntersectionObserver(entries => {
         for (const entry of entries) if (entry.isIntersecting) {
           sectionLinks.forEach(link => {
-            if (link.hash === '#' + entry.target.id) link.setAttribute('aria-current', 'location');
+            if (new URL(link.href, location.href).searchParams.get('section') === entry.target.id) link.setAttribute('aria-current', 'location');
             else link.removeAttribute('aria-current');
           });
         }
@@ -1172,7 +1192,7 @@ HTML = r'''<!doctype html>
     }
   </script>
   <script id="homeTokenConfig" type="application/json">__HOME_TOKEN_CONFIG__</script>
-  <script type="module" src="/assets/token-docs/home-token-ca.mjs"></script>
+  <script type="module" src="/assets/token-docs/home-token-ca.mjs?v=3"></script>
 </body>
 </html>'''
 
