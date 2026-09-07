@@ -690,7 +690,6 @@ HTML = r'''<!doctype html>
   </defs></svg>
   <a class="skip" href="/?section=main">Skip to content</a>
   <noscript><div class="noscript-note">This page is readable without JavaScript. Interactive examples need JavaScript. For builder access, <a href="mailto:builders@agenvora.ai">email builders@agenvora.ai</a>.</div></noscript>
-  <div class="protocol-bar"><div class="wrap micro"><span>Route, verify, and settle AI agent work.</span></div></div>
   <header>
     <nav class="wrap" aria-label="Primary navigation">
       <a class="brand" href="/" aria-label="Agenvora home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>AGENVORA</a>
