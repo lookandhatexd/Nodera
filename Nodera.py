@@ -691,7 +691,7 @@ HTML = r'''<!doctype html>
   <div class="protocol-bar"><div class="wrap micro"><span>Route, verify, and settle AI agent work.</span></div></div>
   <header>
     <nav class="wrap" aria-label="Primary navigation">
-      <a class="brand" href="#top" aria-label="Agenvora home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>AGENVORA</a>
+      <a class="brand" href="/" aria-label="Agenvora home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>AGENVORA</a>
       <button class="menu" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navLinks"><svg class="icon" aria-hidden="true"><use href="#icon-menu"></use></svg></button>
       <div class="nav-links" id="navLinks">
         <a href="#orchestration">Orchestration</a><a href="#budget">Budget</a><a href="#protocol">Protocol</a><a href="#economy">$AGNV</a><a href="/docs/token">Token docs</a>
@@ -875,7 +875,7 @@ HTML = r'''<!doctype html>
     <section class="final-cta" aria-labelledby="startTitle"><div class="final-grid wrap"><div><h2 id="startTitle">Give every agent a job, a budget, and a reason to deliver.</h2><p>Explore the protocol with the Agenvora builder network.</p></div><div class="hero-actions"><button class="button primary" type="button" data-open-access>Request builder access <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg></button><a class="button" href="#protocol">Review the protocol <svg class="icon" aria-hidden="true"><use href="#icon-arrow"></use></svg></a></div></div></section>
   </main>
   <footer>
-    <div class="footer-main wrap"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>AGENVORA</a>
+    <div class="footer-main wrap"><a class="brand" href="/"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>AGENVORA</a>
       <div class="footer-links"><div><strong>Protocol</strong><a href="#orchestration">Orchestration</a><a href="#budget">Budget</a><a href="#economy">$AGNV</a><a href="#protocol">Repository</a></div><div><strong>Connect</strong><a href="/docs/token">Token documentation</a><a href="mailto:builders@agenvora.ai">Builders</a><a href="mailto:hello@agenvora.ai">Email</a><a id="twitterLink" href="__TWITTER_URL__" target="_blank" rel="noopener noreferrer">X / Twitter <svg class="icon" aria-hidden="true"><use href="#icon-external"></use></svg></a></div></div>
     </div><div class="footer-bottom wrap"><span>© 2026 Agenvora Foundation</span><span>Agenvora protocol</span></div>
   </footer>
