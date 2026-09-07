@@ -1,0 +1,12 @@
+.git
+.gitignore
+.codex
+.agents
+.impeccable
+__pycache__
+tests
+site_settings.sqlite3
+.env
+*.pyc
+*.pyo
+*.log

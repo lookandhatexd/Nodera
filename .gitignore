@@ -5,3 +5,4 @@ __pycache__/
 tests/__pycache__/
 token_docs/__pycache__/
 site_settings.sqlite3
+.env

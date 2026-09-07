@@ -1,0 +1,16 @@
+services:
+  agenvora:
+    build: .
+    container_name: agenvora
+    restart: unless-stopped
+    ports:
+      - "${PORT:-8000}:8000"
+    environment:
+      AGEN_VORA_ADMIN_USERNAME: ${AGEN_VORA_ADMIN_USERNAME:-admin}
+      AGEN_VORA_ADMIN_PASSWORD: ${AGEN_VORA_ADMIN_PASSWORD:-}
+      AGEN_VORA_DB_PATH: /data/site_settings.sqlite3
+    volumes:
+      - agenvora_data:/data
+
+volumes:
+  agenvora_data:
