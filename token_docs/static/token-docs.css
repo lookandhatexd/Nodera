@@ -190,6 +190,10 @@ code, pre, .mono { font-family: var(--font-mono); font-variant-numeric: tabular-
 .contract-error:not([hidden]) { display: flex; }
 .contract-error .icon { width: 22px; height: 22px; }
 .contract-error p { max-width: 56ch; margin-top: var(--space-2); }
+.contract-error p:empty { display: none; }
+[data-state="configuration"] .contract-error { min-height: 268px; align-items: center; justify-content: center; flex-direction: column; gap: var(--space-4); text-align: center; border: 0; background: var(--color-canvas-subtle); }
+[data-state="configuration"] .contract-error .icon { width: 36px; height: 36px; }
+[data-state="configuration"] .contract-error strong { max-width: 14ch; font-size: var(--text-h2); line-height: var(--line-tight); }
 .contract-record { min-width: 0; }
 .address-well { min-width: 0; padding: var(--space-4); border: 1px solid var(--color-border-inverse); border-radius: var(--radius-control); background: var(--color-surface-inverse); color: var(--color-text-inverse); }
 .network-line { display: flex; flex-wrap: wrap; align-items: baseline; gap: var(--space-2); padding-bottom: var(--space-3); border-bottom: 1px solid var(--color-border-inverse-subtle); }

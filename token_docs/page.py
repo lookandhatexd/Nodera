@@ -111,13 +111,13 @@ def render_token_docs_page(settings: TokenDocsSettings) -> str:
         <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Agenvora</a><span class="breadcrumb-separator" aria-hidden="true">/</span><span>Token documentation</span></nav>
         <header class="docs-intro">
           <h1>{token_name} Documentation</h1>
-          <p>This page publishes the configured Contract Address, its network, and the endpoint update time. Treat the address and network as one record, and verify critical transactions independently.</p>
+          <p>The official Contract Address and network for {token_name}, presented for reference.</p>
         </header>
 
         <section class="docs-section contract-section" id="official-contract" aria-labelledby="contractTitle">
           <div class="section-heading">
             <h2 id="contractTitle">Official Contract Address</h2>
-            <p>The complete website-published value from the configured endpoint. It is never shortened into the only visible copy.</p>
+            <p>Use the complete Contract Address shown below.</p>
           </div>
 
           <div class="contract-component" id="liveTokenContract" data-state="loading" aria-busy="true">
@@ -126,7 +126,6 @@ def render_token_docs_page(settings: TokenDocsSettings) -> str:
                 <span class="status-marker" aria-hidden="true"></span>
                 <strong id="contractStatus">Contract Address</strong>
               </div>
-              <button class="utility-button" id="refreshContract" type="button" disabled><svg class="icon" aria-hidden="true"><use href="#docs-icon-refresh"></use></svg><span>Refresh</span></button>
             </div>
 
             <div class="stale-warning" id="staleWarning" hidden>
@@ -154,7 +153,6 @@ def render_token_docs_page(settings: TokenDocsSettings) -> str:
                 </div>
                 <div class="contract-actions">
                   <a class="explorer-link" id="explorerLink" target="_blank" rel="noopener noreferrer"><span>View on explorer</span><svg class="icon" aria-hidden="true"><use href="#docs-icon-external"></use></svg></a>
-                  <span class="format-disclaimer">Format checks do not prove token authenticity or contract safety.</span>
                 </div>
               </div>
             </div>
@@ -170,7 +168,6 @@ def render_token_docs_page(settings: TokenDocsSettings) -> str:
             <ul>
               <li>Match the transaction network to <strong id="securityChain">the network displayed above</strong>.</li>
               <li>Sending assets to the wrong address or network may result in permanent loss.</li>
-              <li>The endpoint is this website's published value—not an audit, guarantee, or proof of authenticity.</li>
             </ul>
           </div>
         </aside>
@@ -192,7 +189,7 @@ def render_token_docs_page(settings: TokenDocsSettings) -> str:
           <dl class="spec-register">
             <div><dt>Name</dt><dd>{token_name}</dd></div>
             <div><dt>Symbol</dt><dd class="mono">{token_symbol}</dd></div>
-            <div><dt>Published network</dt><dd id="overviewChain">Loaded from the endpoint</dd></div>
+            <div><dt>Published network</dt><dd id="overviewChain">Shown above</dd></div>
           </dl>
         </section>
 
@@ -202,24 +199,24 @@ def render_token_docs_page(settings: TokenDocsSettings) -> str:
           <ol class="instruction-list">
             <li><strong>Select the exact network.</strong><span>Choose <span id="instructionChain">the displayed network</span> in your wallet before pasting an address.</span></li>
             <li><strong>Open the wallet's manual token import.</strong><span>Do not assume every wallet or network supports a custom-token workflow.</span></li>
-            <li><strong>Paste the complete Contract Address.</strong><span>Use the Copy address control above; never retype or copy a shortened value.</span></li>
+            <li><strong>Paste the complete Contract Address.</strong><span>Use the Copy address control above.</span></li>
             <li><strong>Verify wallet-resolved details.</strong><span>Confirm independently before approving a transaction. This page does not supply unverified decimals or token-standard values.</span></li>
           </ol>
         </section>
 
         <section class="docs-section open-section" id="integration" aria-labelledby="integrationTitle">
           <h2 id="integrationTitle">Integration</h2>
-          <p>Fetch the published record at runtime and validate every field before displaying or using it. Do not ship a copied Contract Address in application code.</p>
+          <p>Read the published record at runtime and validate every field before displaying or using it. Do not ship a copied Contract Address in application code.</p>
           <div class="code-well">
             <div class="code-toolbar"><span>JavaScript / runtime fetch</span><button class="code-copy" id="copyExample" type="button"><svg class="icon" aria-hidden="true"><use href="#docs-icon-copy"></use></svg><span>Copy example</span></button></div>
-            <pre tabindex="0"><code id="integrationCode">const response = await fetch("[ENDPOINT_URL]", {{
+            <pre tabindex="0"><code id="integrationCode">const response = await fetch("/api/contract", {{
   cache: "no-store",
   headers: {{ Accept: "application/json" }}
 }});
 
 if (!response.ok) throw new Error(`HTTP ${{response.status}}`);
 const tokenContract = await response.json();
-// Validate address, chain, explorerUrl, and updatedAt before use.</code></pre>
+// Validate the address, network, and explorer link before use.</code></pre>
             <p class="code-status" id="exampleCopyStatus" role="status" hidden></p>
           </div>
           <h3>Response type</h3>
@@ -227,7 +224,6 @@ const tokenContract = await response.json();
   contractAddress: string;
   chain: string;
   explorerUrl: string;
-  updatedAt: string;
 }};</code></pre></div>
         </section>
 

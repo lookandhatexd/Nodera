@@ -29,19 +29,19 @@ function relativeTime(value, now = new Date()) {
 
 function errorPresentation(error, online = true) {
   if (error?.code === TokenContractErrorCode.CONFIGURATION) {
-    return ["Contract Address to be announced", "There is no published Contract Address yet."];
+    return ["Contract Address to be announced", ""];
   }
   if (error?.code === TokenContractErrorCode.TIMEOUT) {
-    return ["Endpoint timed out", "The endpoint did not respond before the request deadline. Retry when connectivity is stable."];
+    return ["Contract Address unavailable", "The address could not be loaded in time. Retry when connectivity is stable."];
   }
   if (error?.code === TokenContractErrorCode.HTTP) {
-    return ["Contract data unavailable", `${error.message} Retry when the address source is available.`];
+    return ["Contract Address unavailable", "The address source is temporarily unavailable. Retry when it is available again."];
   }
   if ([TokenContractErrorCode.INVALID_RESPONSE, TokenContractErrorCode.MALFORMED_JSON].includes(error?.code)) {
-    return ["Contract data unavailable", `${error.message} No unvalidated address has been displayed.`];
+    return ["Contract Address unavailable", "The published address could not be read safely."];
   }
-  if (!online) return ["You appear to be offline", "Reconnect to the internet, then retry the contract data request."];
-  return ["Contract data unavailable", `${error?.message || "The endpoint could not be reached."} Retry when the connection is available.`];
+  if (!online) return ["You appear to be offline", "Reconnect to the internet, then retry."];
+  return ["Contract Address unavailable", "The published address could not be loaded. Retry when the connection is available."];
 }
 
 function legacyCopy(documentRef, text) {
@@ -98,8 +98,10 @@ export function createTokenContractView(root, documentRef = globalThis.document)
       elements.error.hidden = !blockingError;
       elements.record.hidden = !hasRecord;
       elements.stale.hidden = state.kind !== "stale";
-      elements.refresh.disabled = ["loading", "refreshing", "configuration"].includes(state.kind);
-      elements.refreshLabel.textContent = state.kind === "refreshing" ? "Checking" : ["error", "invalid", "stale"].includes(state.kind) ? "Retry" : "Refresh";
+      if (elements.refresh) {
+        elements.refresh.disabled = ["loading", "refreshing", "configuration"].includes(state.kind);
+        elements.refreshLabel.textContent = state.kind === "refreshing" ? "Checking" : ["error", "invalid", "stale"].includes(state.kind) ? "Retry" : "Refresh";
+      }
 
       const copy = {
         idle: ["Contract Address", ""],
@@ -161,7 +163,7 @@ export class LiveTokenContractAddress {
   }
 
   mount() {
-    this.view.elements.refresh.addEventListener("click", this.refreshHandler);
+    this.view.elements.refresh?.addEventListener("click", this.refreshHandler);
     this.root.querySelector("#copyContract").addEventListener("click", this.copyHandler);
     return this.controller.mount();
   }
