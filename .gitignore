@@ -1,0 +1,7 @@
+/.codex
+/.agents
+/.impeccable
+__pycache__/
+tests/__pycache__/
+token_docs/__pycache__/
+site_settings.sqlite3
