@@ -1,4 +1,4 @@
-import { TokenContractError, TokenContractErrorCode } from "./token-contract.types.mjs?v=3";
+import { TokenContractError, TokenContractErrorCode } from "./token-contract.types.mjs";
 
 function sameRecord(left, right) {
   return Boolean(left && right)

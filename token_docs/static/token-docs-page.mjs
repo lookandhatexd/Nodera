@@ -1,4 +1,4 @@
-import { copyText } from "./live-token-contract.mjs?v=3";
+import { copyText } from "./live-token-contract.mjs";
 import { LiveTokenContractAddress } from "./token-contract-address.mjs?v=3";
 
 function readConfig(documentRef) {
