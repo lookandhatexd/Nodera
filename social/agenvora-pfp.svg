@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400" role="img" aria-labelledby="title desc">
+  <title id="title">Agenvora</title>
+  <desc id="desc">Agenvora four-diamond mark on a deep green background.</desc>
+  <rect width="400" height="400" fill="#073f31"/>
+  <g fill="#c8f169" transform="translate(200 200)">
+    <rect x="-18" y="-112" width="36" height="36" transform="rotate(45)"/>
+    <rect x="76" y="-18" width="36" height="36" transform="rotate(45)"/>
+    <rect x="-18" y="76" width="36" height="36" transform="rotate(45)"/>
+    <rect x="-112" y="-18" width="36" height="36" transform="rotate(45)"/>
+  </g>
+</svg>
