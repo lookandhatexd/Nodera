@@ -2,10 +2,10 @@
   <title id="title">Agenvora</title>
   <desc id="desc">Agenvora four-diamond mark on a deep green background.</desc>
   <rect width="400" height="400" fill="#073f31"/>
-  <g fill="#c8f169" transform="translate(200 200)">
-    <rect x="-18" y="-112" width="36" height="36" transform="rotate(45)"/>
-    <rect x="76" y="-18" width="36" height="36" transform="rotate(45)"/>
-    <rect x="-18" y="76" width="36" height="36" transform="rotate(45)"/>
-    <rect x="-112" y="-18" width="36" height="36" transform="rotate(45)"/>
+  <g fill="#c8f169">
+    <path d="M200 72 248 120 200 168 152 120Z"/>
+    <path d="M232 200 280 152 328 200 280 248Z"/>
+    <path d="M200 232 248 280 200 328 152 280Z"/>
+    <path d="M168 200 120 248 72 200 120 152Z"/>
   </g>
 </svg>

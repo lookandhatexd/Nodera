@@ -10,16 +10,16 @@
     <path d="M1500 368H1290L1200 278H1044"/>
   </g>
   <g fill="#c8f169">
-    <rect x="148" y="114" width="36" height="36" transform="rotate(45 166 132)"/>
-    <rect x="238" y="204" width="36" height="36" transform="rotate(45 256 222)"/>
-    <rect x="148" y="350" width="36" height="36" transform="rotate(45 166 368)"/>
-    <rect x="238" y="260" width="36" height="36" transform="rotate(45 256 278)"/>
+    <path d="M166 82 202 118 166 154 130 118Z"/>
+    <path d="M190 222 226 186 262 222 226 258Z"/>
+    <path d="M166 290 202 326 166 362 130 326Z"/>
+    <path d="M142 222 106 258 70 222 106 186Z"/>
   </g>
-  <g fill="#c8f169" transform="translate(1334 250)">
-    <rect x="-16" y="-96" width="32" height="32" transform="rotate(45)"/>
-    <rect x="64" y="-16" width="32" height="32" transform="rotate(45)"/>
-    <rect x="-16" y="64" width="32" height="32" transform="rotate(45)"/>
-    <rect x="-96" y="-16" width="32" height="32" transform="rotate(45)"/>
+  <g fill="#c8f169">
+    <path d="M1334 188 1366 220 1334 252 1302 220Z"/>
+    <path d="M1356 250 1388 218 1420 250 1388 282Z"/>
+    <path d="M1334 248 1366 280 1334 312 1302 280Z"/>
+    <path d="M1312 250 1280 282 1248 250 1280 218Z"/>
   </g>
 
   <g text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" fill="#f6faf2">
