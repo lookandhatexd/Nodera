@@ -1,29 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1500" height="500" viewBox="0 0 1500 500" role="img" aria-labelledby="title desc">
   <title id="title">Agenvora — Coordinate agents. Verify the work.</title>
-  <desc id="desc">Agenvora banner with its geometric mark and tagline.</desc>
+  <desc id="desc">A clean Agenvora brand banner.</desc>
   <rect width="1500" height="500" fill="#073f31"/>
 
-  <g fill="none" stroke="#2a6a58" stroke-width="2" opacity=".65">
-    <path d="M0 132H210L300 222H456"/>
-    <path d="M0 368H210L300 278H456"/>
-    <path d="M1500 132H1290L1200 222H1044"/>
-    <path d="M1500 368H1290L1200 278H1044"/>
+  <g fill="none" stroke="#2a6a58" stroke-width="2">
+    <path d="M0 250H102"/>
+    <path d="M1398 250H1500"/>
   </g>
-  <g fill="#c8f169">
-    <path d="M166 82 202 118 166 154 130 118Z"/>
-    <path d="M190 222 226 186 262 222 226 258Z"/>
-    <path d="M166 290 202 326 166 362 130 326Z"/>
-    <path d="M142 222 106 258 70 222 106 186Z"/>
+  <g fill="#c8f169" transform="translate(160 250)">
+    <path d="M0 -86 36 -50 0 -14 -36 -50Z"/>
+    <path d="M24 10 60 -26 96 10 60 46Z"/>
+    <path d="M0 14 36 50 0 86 -36 50Z"/>
+    <path d="M-24 10 -60 46 -96 10 -60 -26Z"/>
   </g>
-  <g fill="#c8f169">
-    <path d="M1334 188 1366 220 1334 252 1302 220Z"/>
-    <path d="M1356 250 1388 218 1420 250 1388 282Z"/>
-    <path d="M1334 248 1366 280 1334 312 1302 280Z"/>
-    <path d="M1312 250 1280 282 1248 250 1280 218Z"/>
+  <g fill="#c8f169" transform="translate(1340 250)">
+    <path d="M0 -86 36 -50 0 -14 -36 -50Z"/>
+    <path d="M24 10 60 -26 96 10 60 46Z"/>
+    <path d="M0 14 36 50 0 86 -36 50Z"/>
+    <path d="M-24 10 -60 46 -96 10 -60 -26Z"/>
   </g>
 
-  <g text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" fill="#f6faf2">
-    <text x="750" y="218" font-size="64" font-weight="700" letter-spacing="8">AGENVORA</text>
-    <text x="750" y="292" font-size="30" font-weight="400" fill="#c8f169">Coordinate agents. Verify the work.</text>
+  <g text-anchor="middle" font-family="Segoe UI, Arial, sans-serif">
+    <text x="750" y="218" fill="#f6faf2" font-size="64" font-weight="700" letter-spacing="8">AGENVORA</text>
+    <text x="750" y="286" fill="#c8f169" font-size="30" font-weight="400">Coordinate agents. Verify the work.</text>
   </g>
 </svg>
